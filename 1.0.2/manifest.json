@@ -1,0 +1,42 @@
+{
+   "background": {
+      "page": "lib/chrome/background.html"
+   },
+   "browser_action": {
+      "default_icon": {
+         "32": "data/icons/toolbar/32.png",
+         "48": "data/icons/toolbar/48.png",
+         "64": "data/icons/toolbar/64.png",
+         "128": "data/icons/toolbar/128.png",
+         "300": "data/icons/toolbar/300.png",
+         "2048": "data/icons/toolbar/2048.png"
+      },
+      "default_popup": "data/popup/popup.html",
+      "default_title": "Messenger & Notifier for Facebook™"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "data/content_script/inject.js" ],
+      "matches": [ "*://*.messenger.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Get an easy access to Messenger.",
+   "homepage_url": "https://sites.google.com/view/messengerpopupprivacypolicy/home",
+   "icons": {
+      "128": "data/icons/128.png",
+      "32": "data/icons/32.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png",
+      "300": "data/icons/toolbar/300.png",
+      "2048": "data/icons/2048.png"
+   },
+   "manifest_version": 2,
+   "name": "Messenger Popup",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "data/options/options.html"
+   },
+   "permissions": [ "storage", "webRequest", "webRequestBlocking", "*://*.messenger.com/*" ],
+   "short_name": "Messenger",
+   "version": "1.0.2"
+}
